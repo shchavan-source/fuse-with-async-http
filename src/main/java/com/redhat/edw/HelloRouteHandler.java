@@ -20,18 +20,18 @@ public class HelloRouteHandler {
     @Value("${name}")
     private String name;
 
-    @Async
+//    @Async
     public HelloResponse setHelloWithName() throws Exception {
 
         /*
          * simulate a very long process (10second)
          */
-        Thread.sleep(10000);
+//        Thread.sleep(10000);
 
         /*
          * this process will still getting called after 10 second regardless of sync or async
          */
-        log.info("calling hello for "+name);
+//        log.info("calling hello for "+name);
 
         return HelloResponse.builder().content(name).build();
     }
